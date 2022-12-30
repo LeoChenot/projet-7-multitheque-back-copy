@@ -1,0 +1,6 @@
+%syntax-version=1.0.0
+%project=collectio-scripts
+
+ 
+createtables 2022-05-05T08:48:13Z System Administrator <root@macbook.local> # tables creation
+tablesseeding 2022-05-05T09:09:41Z System Administrator <root@macbook.local> # tables seeding

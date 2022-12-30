@@ -1,0 +1,45 @@
+
+
+### GET ALL REVIEWS FROM ONE USER ### (based on userid in Token)
+GET http://localhost:4200/api/user/1/media HTTP/1.1
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImlhdCI6MTY1MTgyOTM3NCwiZXhwIjoxNzM4MjI5Mzc0fQ.eaNbIVq_vjgC90dfN7tEYM2aX7aP5o9mhtwMX05Onk4
+
+
+### REGISTER ###
+POST http://localhost:4200/api/register HTTP/1.1
+content-type: application/json
+
+{
+    "email": "arnaud@gmail.com",
+    "username": "aaa",
+    "password": "azerty",
+    "firstName": "arnaud",
+    "lastName": "blabla"
+}
+
+### LOGIN ###
+POST http://localhost:4200/api/login HTTP/1.1
+content-type: application/json
+
+{
+  "email": "captain.achab@email.com",
+  "password": "azedrythgfurty"
+}
+
+
+
+### FOR TESTING ONLY - GET ALL USERS ###
+GET http://localhost:4200/api/register HTTP/1.1
+
+
+
+### NOT USED ###
+POST http://localhost:XXXX/ HTTP/1.1
+content-type: application/json
+
+{
+  "title": "Stalker"
+}
+
+
+###
