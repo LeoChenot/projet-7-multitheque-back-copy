@@ -1,4 +1,4 @@
-const { appendFile } = require('fs/promises');
+const fs = require('fs');
 const path = require("path");
 
 class APIError extends Error {
@@ -11,7 +11,7 @@ class APIError extends Error {
     console.error(this.url, this.message, new Date());
     const logPath = path.resolve(__dirname,`../../log/`);
     const fileName = new Date().toISOString().split('T')[0]+'.csv';
-    const result = await appendFile(logPath+"/"+fileName, `${new Date().toLocaleTimeString()},${this.url},${this.message}\n`);
+    const result = await fs.promises.appendFile(logPath+"/"+fileName, `${new Date().toLocaleTimeString()},${this.url},${this.message}\n`);
   }
 };
 
