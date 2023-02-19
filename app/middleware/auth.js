@@ -2,12 +2,10 @@ const jwt = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
   try {
-    // On récupère le token dans le header de la requête from front
-    const token = req.headers["x-access-token"];
-    // On le vérifie et récupère le userID qu'il contient (on l'avait créé lors du login)
-    const decodedToken = jwt.verify(token, `${process.env.TOKEN_KEY}`);;
+    const token = req.headers.authorization;
+    const decodedToken = jwt.verify(token, `${process.env.TOKEN_KEY}`);
     const userId = decodedToken.userId.toString();
-    // On stock le userID en res.locals, et on passe au controller suivant
+    // faire une recherche du user, être sur qu'il existe dans la DB pour un check de sécurité ?
     res.locals.user = userId;
     next();
   } catch {

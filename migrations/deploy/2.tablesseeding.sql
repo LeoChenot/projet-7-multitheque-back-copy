@@ -58,3 +58,6 @@ INSERT INTO "review"(userId, mediaId, note, comment, listID)
     (5, 5, 2.5, 'very moyen', 2);
 
 COMMIT;
+
+
+

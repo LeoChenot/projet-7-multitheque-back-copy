@@ -1,6 +1,8 @@
 %syntax-version=1.0.0
 %project=collectio-scripts
 
- 
-createtables 2022-05-05T08:48:13Z System Administrator <root@macbook.local> # tables creation
-tablesseeding 2022-05-05T09:09:41Z System Administrator <root@macbook.local> # tables seeding
+1.createtables 2022-05-16T11:37:32Z System Administrator <root@macbook.local> # tables creation
+2.tablesseeding 2022-05-16T11:41:32Z System Administrator <root@macbook.local> # first seeding
+3.ForeignKeyConstraint 2022-05-16T11:38:43Z System Administrator <root@macbook.local> # foreign key amendment in media table
+4.realDataSeeding 2022-05-16T11:39:19Z System Administrator <root@macbook.local> # seeding with real data
+5.NotNullMediaCreation 2022-05-16T11:39:46Z System Administrator <root@macbook.local> # adding constraint on media

@@ -1,0 +1,9 @@
+BEGIN;
+
+ALTER TABLE IF EXISTS public.media
+ALTER COLUMN title SET NOT NULL;
+
+ALTER TABLE public.media 
+ALTER COLUMN coverurl SET NOT NULL;
+
+COMMIT;

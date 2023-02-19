@@ -1,4 +1,3 @@
--- Revert collectio-scripts:tablesseeding from pg
 
 BEGIN;
 

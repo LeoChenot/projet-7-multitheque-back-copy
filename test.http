@@ -1,8 +1,46 @@
 
+### getLibrary ###
+GET http://localhost:4200/api/movie HTTP/1.1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1Mjg3NTk4MywiZXhwIjoxNzM5Mjc1OTgzfQ.vLXD-ttX0kDgo450ixHcLs4_DfVBkdhiRCmBZ5vnzGE
 
-### GET ALL REVIEWS FROM ONE USER ### (based on userid in Token)
-GET http://localhost:4200/api/user/1/media HTTP/1.1
-x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImlhdCI6MTY1MTgyOTM3NCwiZXhwIjoxNzM4MjI5Mzc0fQ.eaNbIVq_vjgC90dfN7tEYM2aX7aP5o9mhtwMX05Onk4
+### getOneMedia: getReviewDetails OR getAverageRatingForOne ### 
+GET http://localhost:4200/api/movie/499701 HTTP/1.1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1MzA1NDkyOCwiZXhwIjoxNzM5NDU0OTI4fQ.EqMkStJjn0n2nM-lMzZNcYrAd5KJbAKrCudPWk8alME
+
+
+### addOneReview
+POST http://localhost:4200/api/movie/tt1650048 HTTP/1.1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1MzA1NDkyOCwiZXhwIjoxNzM5NDU0OTI4fQ.EqMkStJjn0n2nM-lMzZNcYrAd5KJbAKrCudPWk8alME
+content-type: application/json
+
+{
+    "list": "wishlist"
+}
+
+
+### updateOneReview
+PATCH http://localhost:4200/api/movie/675353 HTTP/1.1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1Mjg4MTY2NiwiZXhwIjoxNzM5MjgxNjY2fQ.P6p9SVHSFSnbOrUFfP1ftnsEU6yrcBoBR-iVAs2t8CQ
+content-type: application/json
+
+{
+    //"list": "wishlist",
+    "note": 3.5,   
+    "comment": "j'aime pas"
+  }
+
+### deleteOneReview
+DELETE http://localhost:4200/api/movie/499701 HTTP/1.1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1MzA1NDkyOCwiZXhwIjoxNzM5NDU0OTI4fQ.EqMkStJjn0n2nM-lMzZNcYrAd5KJbAKrCudPWk8alME
+
+
+### getBestRated ### 
+GET http://localhost:4200/api/movie/bestrated HTTP/1.1
+
+
+### HEROKU / getBestRated ### 
+GET https://collectio-app.herokuapp.com/api/movie/bestrated HTTP/1.1
+
 
 
 ### REGISTER ###
@@ -10,36 +48,53 @@ POST http://localhost:4200/api/register HTTP/1.1
 content-type: application/json
 
 {
-    "email": "arnaud@gmail.com",
-    "username": "aaa",
-    "password": "azerty",
+    "email": "arnaudnew@gmail.com",
+    "username": "arnaud_new",
+    "password": "Azerty0?",
     "firstName": "arnaud",
-    "lastName": "blabla"
+    "lastName": "grenoble"
 }
+
 
 ### LOGIN ###
 POST http://localhost:4200/api/login HTTP/1.1
 content-type: application/json
 
 {
-  "email": "captain.achab@email.com",
-  "password": "azedrythgfurty"
+  "email": "arnaud@gmail.com",
+  "password": "azerty"
 }
 
 
+### GET PROFILE INFO ###
+GET https://collectio-app.herokuapp.com/api/profile/6 HTTP/1.1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1Mjg4MTY2NiwiZXhwIjoxNzM5MjgxNjY2fQ.P6p9SVHSFSnbOrUFfP1ftnsEU6yrcBoBR-iVAs2t8CQ
 
-### FOR TESTING ONLY - GET ALL USERS ###
-GET http://localhost:4200/api/register HTTP/1.1
+### DELETE PROFILE ###
+DELETE http://localhost:4200/api/profile/2 HTTP/1.1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1MjI1OTcwMywiZXhwIjoxNzM4NjU5NzAzfQ.DJIihXFsvoq9rGN-TW1kQdpEBByeZZuVmJficZ5sI_0
 
-
-
-### NOT USED ###
-POST http://localhost:XXXX/ HTTP/1.1
+### UPDATE PROFILE ###
+PATCH http://localhost:4200/api/profile/8 HTTP/1.1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY1Mjg4MzgzMSwiZXhwIjoxNzM5MjgzODMxfQ.T4a9Ct-ojHnHXCt7IbY2lxWuhHVH12Eth1yYkEQT3y4
 content-type: application/json
 
 {
-  "title": "Stalker"
+  "username": "little_toni"
 }
 
 
-###
+
+#####
+{
+    "email": "marla@gmail.com",
+    "username": "marla",
+    "password": "azerty8",
+    "newpassword": "azerty10",
+    "firstName": "marla",
+    "lastName": "singer",
+    "gender" : "female",
+    "birthdaydate" : "10/02/1987",
+    "bio" : "Ma vie, mon oeuvre",
+    "pictureurl" : "www.picture.io"
+}

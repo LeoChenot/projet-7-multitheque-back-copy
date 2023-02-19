@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+16:02:23,/api/movie/499701,SyntaxError: Unexpected token } in JSON at position 43
+=======
+09:39:06,/api/movie/zG9wDwAAQBAJ,TypeError: Cannot read properties of undefined (reading 'note_moyenne')
+10:44:57,/api/profile/12/upload,TypeError: res.send is not a function
+14:49:18,/api/movie/tt1650048,SyntaxError: Unexpected string in JSON at position 25
+>>>>>>> imageupload
